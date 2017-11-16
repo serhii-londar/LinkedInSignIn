@@ -17,10 +17,10 @@
 		7F424FE68F0FFC039AD142A4B97EA91A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC2701612314717790951FEC5AD9A35 /* Foundation.framework */; };
 		850FBCA4A84C3C09F34A331B1DF80FFA /* LinkedInConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D1FBAD5AC7671B474953D5BF32631 /* LinkedInConfig.swift */; };
 		91DB0382C34E6F5D1B0FF0905E8A6267 /* Pods-LinkedInSignIn_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E1521ED38251BF9B420BEE809D5BC8 /* Pods-LinkedInSignIn_Tests-dummy.m */; };
+		920614F51FBE41F60069D9C7 /* LinkedInLoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C0365899CF35C3659B820A5122C3A9 /* LinkedInLoginVC.storyboard */; };
 		9B2F7409601325D89D99733A6656F6C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58397B5B5BC9E2BDF8AFBC55A6A6AC49 /* UIKit.framework */; };
 		B471B2E2BBE4007E6862888A01F78560 /* Pods-LinkedInSignIn_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 584A8FE2D75741771ECAA0D7BBD11A5D /* Pods-LinkedInSignIn_Example-dummy.m */; };
 		BBAA23BC593A71C902A11DA99DFA2C0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC2701612314717790951FEC5AD9A35 /* Foundation.framework */; };
-		C1A3C46E6331CA09F1FD596212D413D3 /* LinkedInLoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C0365899CF35C3659B820A5122C3A9 /* LinkedInLoginVC.storyboard */; };
 		CBBE924DC9F40C3D5347474054D8C5AB /* LinkedInLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571E0AE15ADDC93A248215CC4F80BA76 /* LinkedInLoginVC.swift */; };
 		D42521831F3293E2CC385BE2C0CA1A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC2701612314717790951FEC5AD9A35 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -44,19 +44,19 @@
 
 /* Begin PBXFileReference section */
 		03E5E570703E45BE307BBB7126D7C21F /* Pods-LinkedInSignIn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LinkedInSignIn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		046CCC7AF53D409EDB0FE4F532D5C2F1 /* Pods_LinkedInSignIn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LinkedInSignIn_Tests.framework; path = "Pods-LinkedInSignIn_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		046CCC7AF53D409EDB0FE4F532D5C2F1 /* Pods_LinkedInSignIn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkedInSignIn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F5D6F8F1D05B27247B6A93DCA3372F /* LinkedInSignIn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LinkedInSignIn.xcconfig; sourceTree = "<group>"; };
-		0AE360CD58E2A8EC3CE7910F92BC2404 /* LinkedInSignIn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LinkedInSignIn.modulemap; sourceTree = "<group>"; };
+		0AE360CD58E2A8EC3CE7910F92BC2404 /* LinkedInSignIn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LinkedInSignIn.modulemap; sourceTree = "<group>"; };
 		1043A344AE3BA61D01F5838FD9558366 /* Pods-LinkedInSignIn_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LinkedInSignIn_Example.release.xcconfig"; sourceTree = "<group>"; };
 		12B5ABA44721643DADE0F47049A67DC0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		150DEC78BAED65D6249CE61CC1548CA8 /* Pods-LinkedInSignIn_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LinkedInSignIn_Example-frameworks.sh"; sourceTree = "<group>"; };
 		15344185566B2FD61BD6F1ABB990613E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E64AC975D9A84E44C7AAE3E84CFEED7 /* Pods-LinkedInSignIn_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LinkedInSignIn_Example-umbrella.h"; sourceTree = "<group>"; };
 		2EA9FD4E5F40C918B562112AB1E5E171 /* LinkedInSignIn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LinkedInSignIn-dummy.m"; sourceTree = "<group>"; };
-		302D7167A047F6150DA218C8CD6A86F8 /* Pods_LinkedInSignIn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LinkedInSignIn_Example.framework; path = "Pods-LinkedInSignIn_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		33B638383D904000491E27780551D958 /* LinkedInSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LinkedInSignIn.framework; path = LinkedInSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		396C6C30DDBF8C3F41D909D1A0593892 /* LinkedInSignIn.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LinkedInSignIn.bundle; path = LinkedInSignIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AB868DAC9DC01A2CF97E5A5FF30F1E4 /* Pods-LinkedInSignIn_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LinkedInSignIn_Example.modulemap"; sourceTree = "<group>"; };
+		302D7167A047F6150DA218C8CD6A86F8 /* Pods_LinkedInSignIn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkedInSignIn_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33B638383D904000491E27780551D958 /* LinkedInSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LinkedInSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		396C6C30DDBF8C3F41D909D1A0593892 /* LinkedInSignIn.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkedInSignIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AB868DAC9DC01A2CF97E5A5FF30F1E4 /* Pods-LinkedInSignIn_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LinkedInSignIn_Example.modulemap"; sourceTree = "<group>"; };
 		3AC2701612314717790951FEC5AD9A35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		416B95E0CE47B287B1A14B3B53C97ED0 /* Pods-LinkedInSignIn_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LinkedInSignIn_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		41C0365899CF35C3659B820A5122C3A9 /* LinkedInLoginVC.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LinkedInLoginVC.storyboard; path = LinkedInSignIn/Resources/LinkedInLoginVC.storyboard; sourceTree = "<group>"; };
@@ -67,8 +67,8 @@
 		584A8FE2D75741771ECAA0D7BBD11A5D /* Pods-LinkedInSignIn_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LinkedInSignIn_Example-dummy.m"; sourceTree = "<group>"; };
 		58F6D4A35730C1F0C6250691851FE3A8 /* LinkedinHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinkedinHelper.swift; path = LinkedInSignIn/Classes/LinkedinHelper.swift; sourceTree = "<group>"; };
 		78D505336D1B2740356BE6D6A1B8D015 /* ResourceBundle-LinkedInSignIn-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-LinkedInSignIn-Info.plist"; sourceTree = "<group>"; };
-		89CFA416103F583454885EE80408702F /* Pods-LinkedInSignIn_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LinkedInSignIn_Tests.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		89CFA416103F583454885EE80408702F /* Pods-LinkedInSignIn_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LinkedInSignIn_Tests.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9924BC149C72AA1AE60392093C3DE2EA /* Pods-LinkedInSignIn_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LinkedInSignIn_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		A3E1521ED38251BF9B420BEE809D5BC8 /* Pods-LinkedInSignIn_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LinkedInSignIn_Tests-dummy.m"; sourceTree = "<group>"; };
 		A9DC37D358F10D39B8C4CEF964443214 /* Pods-LinkedInSignIn_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LinkedInSignIn_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -386,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71F6175CC695F819FA861E1E2DCFBD63 /* LinkedInSignIn.bundle in Resources */,
+				920614F51FBE41F60069D9C7 /* LinkedInLoginVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +394,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1A3C46E6331CA09F1FD596212D413D3 /* LinkedInLoginVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,13 @@
 import UIKit
 import LinkedInSignIn
 
+let linkedinCredentilas = [
+    "linkedInKey": "",
+    "linkedInSecret": "",
+    "redirectURL": ""
+]
+
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: AnyObject) {
-        let linkedInConfig = LinkedInConfig(linkedInKey: "490br8vpy5nf", linkedInSecret: "NpURUk3inPSz3ekp", redirectURL: "https://www.facebook.com/connect/login_success.html")
+        let linkedInConfig = LinkedInConfig(linkedInKey: linkedinCredentilas["linkedInKey"]!, linkedInSecret: linkedinCredentilas["linkedInSecret"]!, redirectURL: linkedinCredentilas["redirectURL"]!)
         let linkedInHelper = LinkedinHelper(linkedInConfig: linkedInConfig)
         linkedInHelper.login(from: self, completion: { (accessToken) in
             let alertVC = UIAlertController(title: "Success", message: "Your access token is : \(accessToken)!", preferredStyle: .alert)

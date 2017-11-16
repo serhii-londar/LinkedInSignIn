@@ -26,7 +26,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Serhii Londar' => 'serhii.londar@gmail.com' }
   s.source           = { :git => 'https://github.com/serhii.londar/LinkedInSignIn.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/serhii_londar'
+  s.social_media_url = 'https://twitter.com/serhii_londar'
 
   s.ios.deployment_target = '9.0'
 
