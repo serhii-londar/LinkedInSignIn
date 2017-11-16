@@ -9,7 +9,37 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+Also you need to setup app on [LinkedIn](https://www.linkedin.com/developer/apps) and fill in dictionary with your app credetials:
+
+```swift
+let linkedinCredentilas = [
+    "linkedInKey": "",
+    "linkedInSecret": "",
+    "redirectURL": ""
+]
+
+```
+
+Login proces is simple as:
+
+```swift
+let linkedInConfig = LinkedInConfig(linkedInKey: linkedinCredentilas["linkedInKey"]!, linkedInSecret: linkedinCredentilas["linkedInSecret"]!, redirectURL: linkedinCredentilas["redirectURL"]!)
+let linkedInHelper = LinkedinHelper(linkedInConfig: linkedInConfig)
+linkedInHelper.login(from: self, completion: { (accessToken) in
+        let alertVC = UIAlertController(title: "Success", message: "Your access token is : \(accessToken)!", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            alertVC.dismiss(animated: true, completion: nil)
+        }))
+    self.present(alertVC, animated: true, completion: nil)
+}) { error in
+    print(error.localizedDescription)
+}
+```
+
+
+<!--## Requirements
+-->
+
 
 ## Installation
 
@@ -22,7 +52,9 @@ pod 'LinkedInSignIn'
 
 ## Author
 
-Serhii Londar, serhii.londar@gmail.com
+Github: [Serhii Londar](https://github.com/serhii-londar)
+
+Email: [serhii.londar@gmail.com](mailto: serhii.londar@gmail.com)
 
 ## License
 
