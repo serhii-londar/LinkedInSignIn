@@ -25,16 +25,14 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Serhii Londar' => 'serhii.londar@gmail.com' }
-  s.source           = { :git => 'https://github.com/serhii.londar/LinkedInSignIn.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/serhii-londar/LinkedInSignIn.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/serhii_londar'
 
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'LinkedInSignIn/Classes/**/*'
   
-  s.resource_bundles = {
-    'LinkedInSignIn' => ['LinkedInSignIn/Resources/*.storyboard']
-  }
+  s.resource = 'LinkedInSignIn/**/*.storyboard'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'MapKit'
