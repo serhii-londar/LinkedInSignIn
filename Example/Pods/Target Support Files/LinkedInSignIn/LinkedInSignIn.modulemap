@@ -1,0 +1,6 @@
+framework module LinkedInSignIn {
+  umbrella header "LinkedInSignIn-umbrella.h"
+
+  export *
+  module * { export * }
+}
