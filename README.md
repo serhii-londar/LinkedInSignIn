@@ -54,7 +54,7 @@ pod 'LinkedInSignIn'
 
 Github: [Serhii Londar](https://github.com/serhii-londar)
 
-Email: [serhii.londar@gmail.com](mailto: serhii.londar@gmail.com)
+Email: [serhii.londar@gmail.com](mailto:serhii.londar@gmail.com)
 
 ## License
 
