@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C04133421C282A8200C48FAE /* LISignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LISignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04133421C282A8200C48FAE /* LinkedInSignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkedInSignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04133451C282A8200C48FAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C04133471C282A8200C48FAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C041334A1C282A8200C48FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		C04133431C282A8200C48FAE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C04133421C282A8200C48FAE /* LISignIn.app */,
+				C04133421C282A8200C48FAE /* LinkedInSignIn.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +76,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C04133411C282A8200C48FAE /* LISignIn */ = {
+		C04133411C282A8200C48FAE /* LinkedInSignIn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C04133541C282A8200C48FAE /* Build configuration list for PBXNativeTarget "LISignIn" */;
+			buildConfigurationList = C04133541C282A8200C48FAE /* Build configuration list for PBXNativeTarget "LinkedInSignIn" */;
 			buildPhases = (
 				C041333E1C282A8200C48FAE /* Sources */,
 				C041333F1C282A8200C48FAE /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = LISignIn;
+			name = LinkedInSignIn;
 			productName = LISignIn;
-			productReference = C04133421C282A8200C48FAE /* LISignIn.app */;
+			productReference = C04133421C282A8200C48FAE /* LinkedInSignIn.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C041333D1C282A8200C48FAE /* Build configuration list for PBXProject "LISignIn" */;
+			buildConfigurationList = C041333D1C282A8200C48FAE /* Build configuration list for PBXProject "LinkedInSignIn" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C04133411C282A8200C48FAE /* LISignIn */,
+				C04133411C282A8200C48FAE /* LinkedInSignIn */,
 			);
 		};
 /* End PBXProject section */
@@ -282,7 +282,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C041333D1C282A8200C48FAE /* Build configuration list for PBXProject "LISignIn" */ = {
+		C041333D1C282A8200C48FAE /* Build configuration list for PBXProject "LinkedInSignIn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C04133521C282A8200C48FAE /* Debug */,
@@ -291,7 +291,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C04133541C282A8200C48FAE /* Build configuration list for PBXNativeTarget "LISignIn" */ = {
+		C04133541C282A8200C48FAE /* Build configuration list for PBXNativeTarget "LinkedInSignIn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C04133551C282A8200C48FAE /* Debug */,

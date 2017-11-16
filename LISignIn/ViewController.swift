@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         btnSignIn.isEnabled = true
-        btnGetProfileInfo.isEnabled = false
         btnOpenProfile.isHidden = true
     }
 

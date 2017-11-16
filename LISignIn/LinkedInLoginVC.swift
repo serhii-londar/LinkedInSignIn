@@ -22,7 +22,6 @@ class LinkedInLoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.delegate = self
-        startAuthorization()
     }
     
     @IBAction func dismiss(sender: AnyObject) {
@@ -34,10 +33,10 @@ class LinkedInLoginVC: UIViewController {
         linkedInLoginVC.completion = completion
         linkedInLoginVC.failure = failure
         linkedInLoginVC.linkedInConfig = linkedInConfig
-        linkedInLoginVC.startAuthorization()
+        linkedInLoginVC.startAuthorization(linkedInConfig.scope)
     }
     
-    func startAuthorization() {
+    func startAuthorization(_ scope: String) {
         let responseType = "code"
         let state = "linkedin\(Int(NSDate().timeIntervalSince1970))"
         

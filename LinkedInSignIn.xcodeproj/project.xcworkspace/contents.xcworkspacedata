@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LISignIn.xcodeproj">
+      location = "self:/Users/serhii-londar/Downloads/LinkedInSignInDemo-master/LinkedInSignIn.xcodeproj">
    </FileRef>
 </Workspace>
