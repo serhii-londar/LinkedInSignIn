@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'LinkedInSignIn'
   s.version          = '0.0.1'
-  s.summary          = 'A short description of LinkedInSignIn.'
+  s.summary          = 'Simple view controller to login and retrieve access token from linkedin.com'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,11 +18,11 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Simple view controller to login and retrieve access token from linkedin.com
                        DESC
 
   s.homepage         = 'https://github.com/serhii.londar/LinkedInSignIn'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'https://imgur.com/R8haoKu', 'https://imgur.com/QzjcjDR'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Serhii Londar' => 'serhii.londar@gmail.com' }
   s.source           = { :git => 'https://github.com/serhii-londar/LinkedInSignIn.git', :tag => s.version.to_s }
@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'LinkedInSignIn/Classes/**/*'
-  
+
   s.resource = 'LinkedInSignIn/**/*.storyboard'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
