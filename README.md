@@ -1,6 +1,6 @@
 # LinkedInSignIn
 
-[![CI Status](http://img.shields.io/travis/serhii.londar/LinkedInSignIn.svg?style=flat)](https://travis-ci.org/serhii.londar/LinkedInSignIn)
+[![CI Status](http://img.shields.io/travis/serhii-londar/LinkedInSignIn.svg?style=flat)](https://travis-ci.org/serhii-londar/LinkedInSignIn)
 [![Version](https://img.shields.io/cocoapods/v/LinkedInSignIn.svg?style=flat)](http://cocoapods.org/pods/LinkedInSignIn)
 [![License](https://img.shields.io/cocoapods/l/LinkedInSignIn.svg?style=flat)](http://cocoapods.org/pods/LinkedInSignIn)
 [![Platform](https://img.shields.io/cocoapods/p/LinkedInSignIn.svg?style=flat)](http://cocoapods.org/pods/LinkedInSignIn)
