@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'LinkedInSignIn'
   s.version          = '0.0.2'
-  s.summary          = 'Simple view controller writed on pure Swift to login and retrieve access token from linkedin.com'
+  s.summary          = '  Small swift library which help easy get access token from linkedin.com.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  Small swift library which help easy get access token from linkedin.com.
+  Simple view controller writed on pure Swift to login and retrieve access token from linkedin.com
                        DESC
 
   s.pod_target_xcconfig = { "SWIFT_VERSION" => "4.0" }
