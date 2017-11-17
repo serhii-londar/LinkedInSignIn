@@ -22,7 +22,7 @@ Simple view controller to login and retrieve access token from linkedin.com
                        DESC
 
   s.homepage         = 'https://github.com/serhii.londar/LinkedInSignIn'
-  s.screenshots     = 'https://imgur.com/R8haoKu', 'https://imgur.com/QzjcjDR'
+  s.screenshots     = 'https://i.imgur.com/R8haoKu.png', 'https://i.imgur.com/QzjcjDR.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Serhii Londar' => 'serhii.londar@gmail.com' }
   s.source           = { :git => 'https://github.com/serhii-londar/LinkedInSignIn.git', :tag => s.version.to_s }

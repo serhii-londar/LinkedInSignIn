@@ -37,11 +37,11 @@ linkedInHelper.login(from: self, completion: { (accessToken) in
 ```
 
 <p align="center">
-  <img src="https://imgur.com/R8haoKu" width="350"/>
+  <img src="https://i.imgur.com/R8haoKu.png" width="350"/>
 </p>
 
 <p align="center">
-  <img src="https://imgur.com/QzjcjDR" width="350"/>
+  <img src="https://i.imgur.com/QzjcjDR.png" width="350"/>
 </p>
 
 
