@@ -31,14 +31,16 @@ class ViewController: UIViewController {
     @IBAction func login(_ sender: AnyObject) {
         let linkedInConfig = LinkedInConfig(linkedInKey: linkedinCredentilas["linkedInKey"]!, linkedInSecret: linkedinCredentilas["linkedInSecret"]!, redirectURL: linkedinCredentilas["redirectURL"]!)
         let linkedInHelper = LinkedinHelper(linkedInConfig: linkedInConfig)
-        linkedInHelper.login(from: self, completion: { (accessToken) in
-            let alertVC = UIAlertController(title: "Success", message: "Your access token is : \(accessToken)!", preferredStyle: .alert)
+        linkedInHelper.login(from: self, completion: { (token) in
+            let alertVC = UIAlertController(title: "Success", message: "Your access token is : \(token)!", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 alertVC.dismiss(animated: true, completion: nil)
             }))
             self.present(alertVC, animated: true, completion: nil)
-        }) { error in
+        }, failure: { (error) in
             print(error.localizedDescription)
+        }) {
+            print("Cancel")
         }
     }
 }

@@ -19,6 +19,7 @@ class LinkedInLoginVC: UIViewController {
     
     var completion: ((String) -> Void)? = nil
     var failure: ((Error) -> Void)? = nil
+    var cancel: (() -> Void)? = nil
     
     let authorizationEndPoint = "https://www.linkedin.com/uas/oauth2/authorization"
     
@@ -28,12 +29,16 @@ class LinkedInLoginVC: UIViewController {
     }
     
     @IBAction func dismiss(sender: AnyObject) {
+        if let cancel = cancel {
+            cancel()
+        }
         dismiss(animated: true, completion: nil)
     }
     
-    func login(linkedInConfig: LinkedInConfig, completion: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+    func login(linkedInConfig: LinkedInConfig, completion: @escaping (String) -> Void, failure: @escaping (Error) -> Void, cancel: @escaping (() -> Void)) {
         self.completion = completion
         self.failure = failure
+        self.cancel = cancel
         self.linkedInConfig = linkedInConfig
         self.startAuthorization(linkedInConfig.scope)
     }

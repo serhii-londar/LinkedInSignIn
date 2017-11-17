@@ -18,6 +18,7 @@ public class LinkedinHelper: NSObject {
     
     var completion: ((String) -> Void)? = nil
     var failure: ((Error) -> Void)? = nil
+    var cancel: (() -> Void)? = nil
     
     let accessTokenEndPoint = "https://www.linkedin.com/uas/oauth2/accessToken"
     
@@ -25,16 +26,17 @@ public class LinkedinHelper: NSObject {
         self.linkedInConfig = linkedInConfig
     }
     
-    public func login(from viewController: UIViewController, completion: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+    public func login(from viewController: UIViewController, completion: @escaping (String) -> Void, failure: @escaping (Error) -> Void, cancel: @escaping () -> Void) {
         self.completion = completion
         self.failure = failure
+        self.cancel = cancel
         
         let storyboard = UIStoryboard(name: "LinkedInLoginVC", bundle: Bundle(for: LinkedInLoginVC.self))
         let linkedInLoginVC = storyboard.instantiateViewController(withIdentifier: "LinkedInLoginVC") as! LinkedInLoginVC
         linkedInLoginVC.loadViewIfNeeded()
         linkedInLoginVC.login(linkedInConfig: linkedInConfig, completion: { (code) in
             self.requestForAccessToken(authorizationCode: code)
-        }, failure: failure)
+        }, failure: failure , cancel: cancel)
         viewController.present(linkedInLoginVC, animated: true, completion: nil)
     }
 }
