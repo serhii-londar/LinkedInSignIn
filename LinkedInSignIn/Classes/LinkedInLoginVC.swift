@@ -78,19 +78,19 @@ extension LinkedInLoginVC: UIWebViewDelegate {
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        self.failure(error)
+        self.failureError(error)
     }
 }
 
 
 extension LinkedInLoginVC {
-    func failure(_ error: Error) {
+    func failureError(_ error: Error) {
         if let failure = failure {
             failure(LinkedInLoginError.error(error.localizedDescription))
         }
     }
     
-    func failure(_ error: String) {
+    func failureString(_ error: String) {
         if let failure = failure {
             failure(LinkedInLoginError.error(error))
         }

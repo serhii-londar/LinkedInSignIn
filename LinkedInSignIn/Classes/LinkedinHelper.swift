@@ -41,13 +41,13 @@ public class LinkedinHelper: NSObject {
 
 
 extension LinkedinHelper {
-    func failure(_ error: Error) {
+    func failureError(_ error: Error) {
         if let failure = failure {
             failure(LinkedInLoginError.error(error.localizedDescription))
         }
     }
     
-    func failure(_ error: String) {
+    func failureString(_ error: String) {
         if let failure = failure {
             failure(LinkedInLoginError.error(error))
         }
@@ -84,13 +84,13 @@ extension LinkedinHelper {
                     if let accessToken = dataDictionary["access_token"] as? String {
                         self.completion(accessToken)
                     } else {
-                        self.failure("Could not get access_token from json")
+                        self.failureString("Could not get access_token from json")
                     }
                 } catch {
-                    self.failure("Could not convert JSON data into a dictionary.")
+                    self.failureString("Could not convert JSON data into a dictionary.")
                 }
             } else {
-                self.failure("Received error with code: \(statusCode)")
+                self.failureString("Received error with code: \(statusCode)")
             }
         }
         task.resume()
