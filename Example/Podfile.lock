@@ -1,5 +1,5 @@
 PODS:
-  - LinkedInSignIn (0.0.1)
+  - LinkedInSignIn (0.0.3)
 
 DEPENDENCIES:
   - LinkedInSignIn (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LinkedInSignIn: 01c56184f02acbbc2434f4e7e59d35e58c0d7ed8
+  LinkedInSignIn: 2cf7b1272d64ff32e432d1ae135af372af369cf1
 
 PODFILE CHECKSUM: 179c4a86f033a1f2a758db2f26f0e16b575fa15d
 

@@ -8,3 +8,4 @@ xcode_workspace: Example/LinkedInSignIn.xcworkspace
 xcode_scheme: LinkedInSignIn_Example
 before_install:
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  - pod install
