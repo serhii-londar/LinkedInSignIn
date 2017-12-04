@@ -112,7 +112,7 @@ extension LinkedInLoginVC {
 }
 
 extension LinkedInLoginVC {
-    private func showHUD() {
+    func showHUD() {
         DispatchQueue.main.async {
             let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
             UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = UIColor.white
@@ -121,7 +121,7 @@ extension LinkedInLoginVC {
         }
     }
     
-    private func hideHUD() {
+    func hideHUD() {
         DispatchQueue.main.async {
             MBProgressHUD.hide(for: self.view, animated: true)
         }
