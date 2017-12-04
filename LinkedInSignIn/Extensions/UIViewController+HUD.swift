@@ -10,12 +10,12 @@ import Foundation
 import MBProgressHUD
 
 extension UIViewController {
-    open func showHUD() {
+    public func showHUD() {
         DispatchQueue.main.async {
             let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
             UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = UIColor.white
-            progressHUD.bezelView.color = UIColor(red:86.0/255.0, green: 192.0/255.0, blue: 241.0/255.0, alpha: 1.0)
-            progressHUD.bringSubview(toFront: self.view)
+            progressHUD?.color = UIColor(red:86.0/255.0, green: 192.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+            progressHUD?.bringSubview(toFront: self.view)
         }
     }
     
