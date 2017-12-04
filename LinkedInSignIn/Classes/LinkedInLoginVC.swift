@@ -26,6 +26,7 @@ class LinkedInLoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.delegate = self
+        self.showHUD()
     }
     
     @IBAction func dismiss(sender: AnyObject) {
@@ -60,11 +61,13 @@ class LinkedInLoginVC: UIViewController {
         let request = URLRequest(url: url!)
         webView.loadRequest(request)
     }
-    
-    
 }
 
 extension LinkedInLoginVC: UIWebViewDelegate {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        self.hideHUD()
+    }
+    
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         let url = request.url!
         if url.absoluteString.contains(authorizationEndPoint) {

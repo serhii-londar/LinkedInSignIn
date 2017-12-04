@@ -288,10 +288,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LinkedInSignIn_Example/Pods-LinkedInSignIn_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LinkedInSignIn/LinkedInSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinkedInSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
