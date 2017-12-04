@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LinkedInSignIn'
-  s.version          = '0.0.5'
+  s.version          = '0.0.6'
   s.summary          = '  Small swift library which help easy get access token from linkedin.com.'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'LinkedInSignIn/Classes/**/*', 'LinkedInSignIn/Extensions/**/*'
+  s.source_files = 'LinkedInSignIn/Classes/**/*'
 
   s.resource = 'LinkedInSignIn/**/*.storyboard'
 

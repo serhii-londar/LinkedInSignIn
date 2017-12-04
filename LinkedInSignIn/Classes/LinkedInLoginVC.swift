@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 enum LinkedInLoginError: Error {
     case error(String)
@@ -90,7 +91,6 @@ extension LinkedInLoginVC: UIWebViewDelegate {
     }
 }
 
-
 extension LinkedInLoginVC {
     func failureError(_ error: Error) {
         if let failure = failure {
@@ -107,6 +107,23 @@ extension LinkedInLoginVC {
     func completion(_ accessToken: String) {
         if let completion = completion {
             completion(accessToken)
+        }
+    }
+}
+
+extension LinkedInLoginVC {
+    private func showHUD() {
+        DispatchQueue.main.async {
+            let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
+            UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = UIColor.white
+            progressHUD?.color = UIColor(red:86.0/255.0, green: 192.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+            progressHUD?.bringSubview(toFront: self.view)
+        }
+    }
+    
+    private func hideHUD() {
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
         }
     }
 }
