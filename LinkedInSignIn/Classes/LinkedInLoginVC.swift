@@ -18,6 +18,9 @@ class LinkedInLoginVC: UIViewController {
     
     var linkedInConfig: LinkedInConfig! = nil
     
+    var loadingTitleString: String? = nil
+    var loadingTitleFont: UIFont? = nil
+    
     var completion: ((String) -> Void)? = nil
     var failure: ((Error) -> Void)? = nil
     var cancel: (() -> Void)? = nil
@@ -122,6 +125,12 @@ extension LinkedInLoginVC {
         DispatchQueue.main.async {
             let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
             UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = UIColor.white
+            if let labeltext = self.loadingTitleString {
+                progressHUD?.labelText = labeltext
+            }
+            if let labelFont = self.loadingTitleFont {
+                progressHUD?.labelFont = labelFont
+            }
             progressHUD?.color = UIColor(red:86.0/255.0, green: 192.0/255.0, blue: 241.0/255.0, alpha: 1.0)
             progressHUD?.bringSubview(toFront: self.view)
         }
