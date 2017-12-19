@@ -15,7 +15,7 @@ enum LinkedinHelperError: Error {
 
 public class LinkedinHelper: NSObject {
     var linkedInConfig: LinkedInConfig! = nil
-    
+    var linkedInLoginVC: LinkedInLoginVC! = nil
     var completion: ((String) -> Void)? = nil
     var failure: ((Error) -> Void)? = nil
     var cancel: (() -> Void)? = nil
@@ -32,13 +32,23 @@ public class LinkedinHelper: NSObject {
         self.cancel = cancel
         
         let storyboard = UIStoryboard(name: "LinkedInLoginVC", bundle: Bundle(for: LinkedInLoginVC.self))
-        let linkedInLoginVC = storyboard.instantiateViewController(withIdentifier: "LinkedInLoginVC") as! LinkedInLoginVC
+        linkedInLoginVC = storyboard.instantiateViewController(withIdentifier: "LinkedInLoginVC") as! LinkedInLoginVC
         linkedInLoginVC.loadViewIfNeeded()
         linkedInLoginVC.loadingTitleString = loadingTitleString
         linkedInLoginVC.loadingTitleFont = loadingTitleFont
         linkedInLoginVC.login(linkedInConfig: linkedInConfig, completion: { (code) in
             self.requestForAccessToken(authorizationCode: code)
-        }, failure: failure , cancel: cancel)
+        }, failure: { (error) in
+            self.linkedInLoginVC.dismiss(animated: true, completion: nil)
+            if let failure = self.failure {
+                failure(error)
+            }
+        }) {
+            self.linkedInLoginVC.dismiss(animated: true, completion: nil)
+            if let cancel = self.cancel {
+                cancel()
+            }
+        }
         viewController.present(linkedInLoginVC, animated: true, completion: nil)
     }
 }
@@ -46,18 +56,21 @@ public class LinkedinHelper: NSObject {
 
 extension LinkedinHelper {
     func failureError(_ error: Error) {
+        linkedInLoginVC.dismiss(animated: true, completion: nil)
         if let failure = failure {
             failure(LinkedInLoginError.error(error.localizedDescription))
         }
     }
     
     func failureString(_ error: String) {
+        linkedInLoginVC.dismiss(animated: true, completion: nil)
         if let failure = failure {
             failure(LinkedInLoginError.error(error))
         }
     }
     
     func completion(_ accessToken: String) {
+        linkedInLoginVC.dismiss(animated: true, completion: nil)
         if let completion = completion {
             completion(accessToken)
         }
