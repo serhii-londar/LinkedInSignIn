@@ -84,6 +84,7 @@ extension LinkedInLoginVC: UIWebViewDelegate {
             DispatchQueue.main.async {
                 self.dismiss(animated: true, completion: nil)
             }
+            return false
         }
         if url.absoluteString.contains("error=access_denied") {
             failureString("Access Denied")

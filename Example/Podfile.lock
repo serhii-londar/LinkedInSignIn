@@ -1,5 +1,5 @@
 PODS:
-  - LinkedInSignIn (0.0.5):
+  - LinkedInSignIn (0.0.9):
     - MBProgressHUD (~> 0.9)
   - MBProgressHUD (0.9.2)
 
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LinkedInSignIn: d426f9c649fb2626e3207b4942b2bb4ed292b79f
+  LinkedInSignIn: 72bc22d20ebb70b477c960c3fee0c122c1702d25
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
 
 PODFILE CHECKSUM: 179c4a86f033a1f2a758db2f26f0e16b575fa15d

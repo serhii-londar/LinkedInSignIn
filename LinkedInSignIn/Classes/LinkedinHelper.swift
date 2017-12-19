@@ -81,20 +81,28 @@ extension LinkedinHelper {
         request.addValue("application/x-www-form-urlencoded;", forHTTPHeaderField: "Content-Type")
         let session = URLSession(configuration: URLSessionConfiguration.default)
         let task: URLSessionDataTask = session.dataTask(with: request) { (data, response, error) -> Void in
-            let statusCode = (response as! HTTPURLResponse).statusCode
-            if statusCode == 200 {
-                do {
-                    let dataDictionary = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: Any]
-                    if let accessToken = dataDictionary["access_token"] as? String {
-                        self.completion(accessToken)
-                    } else {
-                        self.failureString("Could not get access_token from json")
+            if let response = response {
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                if statusCode == 200 {
+                    do {
+                        let dataDictionary = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: Any]
+                        if let accessToken = dataDictionary["access_token"] as? String {
+                            self.completion(accessToken)
+                        } else {
+                            self.failureString("Could not get access_token from json.")
+                        }
+                    } catch {
+                        self.failureString("Could not convert JSON data into a dictionary.")
                     }
-                } catch {
-                    self.failureString("Could not convert JSON data into a dictionary.")
+                } else {
+                    self.failureString("Received error with code: \(statusCode)")
                 }
             } else {
-                self.failureString("Received error with code: \(statusCode)")
+                if let error = error {
+                    self.failureError(error)
+                } else {
+                    self.failureString("Response and error is ni.l")
+                }
             }
         }
         task.resume()
