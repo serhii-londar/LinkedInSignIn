@@ -37,7 +37,6 @@ class LinkedInLoginVC: UIViewController {
         if let cancel = cancel {
             cancel()
         }
-        dismiss(animated: true, completion: nil)
     }
     
     func login(linkedInConfig: LinkedInConfig, completion: @escaping (String) -> Void, failure: @escaping (Error) -> Void, cancel: @escaping (() -> Void)) {
