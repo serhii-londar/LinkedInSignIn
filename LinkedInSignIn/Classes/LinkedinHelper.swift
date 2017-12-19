@@ -39,14 +39,14 @@ public class LinkedinHelper: NSObject {
         linkedInLoginVC.login(linkedInConfig: linkedInConfig, completion: { (code) in
             self.requestForAccessToken(authorizationCode: code)
         }, failure: { (error) in
-            self.linkedInLoginVC.dismiss(animated: true, completion: nil)
-            if let failure = self.failure {
-                failure(error)
-            }
+            self.failureError(error)
         }) {
-            self.linkedInLoginVC.dismiss(animated: true, completion: nil)
-            if let cancel = self.cancel {
-                cancel()
+            DispatchQueue.main.async {
+                self.linkedInLoginVC.dismiss(animated: true, completion: {
+                    if let cancel = self.cancel {
+                        cancel()
+                    }
+                })
             }
         }
         viewController.present(linkedInLoginVC, animated: true, completion: nil)
@@ -56,23 +56,32 @@ public class LinkedinHelper: NSObject {
 
 extension LinkedinHelper {
     func failureError(_ error: Error) {
-        linkedInLoginVC.dismiss(animated: true, completion: nil)
-        if let failure = failure {
-            failure(LinkedInLoginError.error(error.localizedDescription))
+        DispatchQueue.main.async {
+            self.linkedInLoginVC.dismiss(animated: true, completion: {
+                if let failure = self.failure {
+                    failure(LinkedInLoginError.error(error.localizedDescription))
+                }
+            })
         }
     }
     
     func failureString(_ error: String) {
-        linkedInLoginVC.dismiss(animated: true, completion: nil)
-        if let failure = failure {
-            failure(LinkedInLoginError.error(error))
+        DispatchQueue.main.async {
+            self.linkedInLoginVC.dismiss(animated: true, completion: {
+                if let failure = self.failure {
+                    failure(LinkedInLoginError.error(error))
+                }
+            })
         }
     }
     
     func completion(_ accessToken: String) {
-        linkedInLoginVC.dismiss(animated: true, completion: nil)
-        if let completion = completion {
-            completion(accessToken)
+        DispatchQueue.main.async {
+            self.linkedInLoginVC.dismiss(animated: true, completion: {
+                if let completion = self.completion {
+                    completion(accessToken)
+                }
+            })
         }
     }
 }

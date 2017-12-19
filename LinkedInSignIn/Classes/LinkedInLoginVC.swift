@@ -81,16 +81,10 @@ extension LinkedInLoginVC: UIWebViewDelegate {
             let urlParts = url.absoluteString.components(separatedBy: "?")
             let code = urlParts[1].components(separatedBy: "=")[1]
             completion(code)
-//            DispatchQueue.main.async {
-//                self.dismiss(animated: true, completion: nil)
-//            }
             return false
         }
         if url.absoluteString.contains("error=access_denied") {
             failureString("Access Denied")
-//            DispatchQueue.main.async {
-//                self.dismiss(animated: true, completion: nil)
-//            }
             return false
         }
         return true
