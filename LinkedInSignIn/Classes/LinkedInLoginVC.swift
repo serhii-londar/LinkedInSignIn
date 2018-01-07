@@ -125,7 +125,7 @@ extension LinkedInLoginVC {
             if let labelFont = self.loadingTitleFont {
                 progressHUD?.labelFont = labelFont
             }
-            progressHUD?.color = UIColor(red:86.0/255.0, green: 192.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+            progressHUD?.color = UIColor(red: 0.0/255.0, green: 119.0/255.0, blue: 181.0/255.0, alpha: 1.0)
             progressHUD?.bringSubview(toFront: self.view)
         }
     }
