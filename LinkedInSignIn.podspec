@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LinkedInSignIn'
-  s.version          = '0.0.13'
+  s.version          = '0.1.0'
   s.summary          = '  Small swift library which help easy get access token from linkedin.com.'
 
 # This description is used to generate tags and improve search results.
