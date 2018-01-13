@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     @IBAction func login(_ sender: AnyObject) {
         let linkedInConfig = LinkedInConfig(linkedInKey: linkedinCredentilas["linkedInKey"]!, linkedInSecret: linkedinCredentilas["linkedInSecret"]!, redirectURL: linkedinCredentilas["redirectURL"]!)
         let linkedInHelper = LinkedinHelper(linkedInConfig: linkedInConfig)
-        linkedInHelper.login(from: self, loadingTitleString: "Loading", completion: { (token) in
+        linkedInHelper.login(from: self, loadingTitleString: "Loading", navigationColor: .red, completion: { (token) in
             let alertVC = UIAlertController(title: "Success", message: "Your access token is : \(token)!", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 alertVC.dismiss(animated: true, completion: nil)

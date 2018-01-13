@@ -61,6 +61,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="navigationBar" destination="Cn1-xh-hLc" id="SM0-io-MqF"/>
                         <outlet property="webView" destination="DHA-27-mmH" id="UKd-aO-30O"/>
                     </connections>
                 </viewController>

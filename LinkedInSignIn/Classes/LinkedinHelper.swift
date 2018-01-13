@@ -26,16 +26,17 @@ public class LinkedinHelper: NSObject {
         self.linkedInConfig = linkedInConfig
     }
     
-    public func login(from viewController: UIViewController, loadingTitleString: String? = nil,  loadingTitleFont: UIFont? = nil, completion: @escaping (String) -> Void, failure: @escaping (Error) -> Void, cancel: @escaping () -> Void) {
+    public func login(from viewController: UIViewController, loadingTitleString: String? = nil,  loadingTitleFont: UIFont? = nil, navigationColor: UIColor = UIColor(red: 0, green: 119.0 / 255.0, blue: 181.0 / 255.0, alpha: 1.0), completion: @escaping (String) -> Void, failure: @escaping (Error) -> Void, cancel: @escaping () -> Void) {
         self.completion = completion
         self.failure = failure
         self.cancel = cancel
         
         let storyboard = UIStoryboard(name: "LinkedInLoginVC", bundle: Bundle(for: LinkedInLoginVC.self))
         linkedInLoginVC = storyboard.instantiateViewController(withIdentifier: "LinkedInLoginVC") as! LinkedInLoginVC
-        linkedInLoginVC.loadViewIfNeeded()
         linkedInLoginVC.loadingTitleString = loadingTitleString
         linkedInLoginVC.loadingTitleFont = loadingTitleFont
+        linkedInLoginVC.navigationColor = navigationColor
+        linkedInLoginVC.loadViewIfNeeded()
         linkedInLoginVC.login(linkedInConfig: linkedInConfig, completion: { (code) in
             self.requestForAccessToken(authorizationCode: code)
         }, failure: { (error) in

@@ -15,11 +15,13 @@ enum LinkedInLoginError: Error {
 
 class LinkedInLoginVC: UIViewController {
     @IBOutlet weak var webView: UIWebView!
-    
+    @IBOutlet weak var navigationBar: UINavigationBar!
     var linkedInConfig: LinkedInConfig! = nil
     
     var loadingTitleString: String? = nil
     var loadingTitleFont: UIFont? = nil
+    
+    var navigationColor: UIColor? = nil
     
     var completion: ((String) -> Void)? = nil
     var failure: ((Error) -> Void)? = nil
@@ -29,6 +31,8 @@ class LinkedInLoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.barTintColor = self.navigationColor
+        self.view.backgroundColor = self.navigationColor
         webView.delegate = self
         self.showHUD()
     }
