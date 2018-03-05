@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class LinkedInConfig: NSObject {
-    public var linkedInKey: String
-    public var linkedInSecret: String
-    public var redirectURL: String
-    public var scope: String
+@objc public class LinkedInConfig: NSObject {
+    @objc public var linkedInKey: String
+    @objc public var linkedInSecret: String
+    @objc public var redirectURL: String
+    @objc public var scope: String
     
-    public init(linkedInKey: String, linkedInSecret: String, redirectURL: String, scope: String = "r_basicprofile") {
+    @objc public init(linkedInKey: String, linkedInSecret: String, redirectURL: String, scope: String = "r_basicprofile") {
         self.linkedInKey = linkedInKey
         self.linkedInSecret = linkedInSecret
         self.redirectURL = redirectURL

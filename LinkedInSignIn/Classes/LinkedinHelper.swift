@@ -13,7 +13,7 @@ enum LinkedinHelperError: Error {
     case error(String)
 }
 
-public class LinkedinHelper: NSObject {
+@objc public class LinkedinHelper: NSObject {
     var linkedInConfig: LinkedInConfig! = nil
     var linkedInLoginVC: LinkedInLoginVC! = nil
     var completion: ((String) -> Void)? = nil
@@ -22,11 +22,11 @@ public class LinkedinHelper: NSObject {
     
     let accessTokenEndPoint = "https://www.linkedin.com/uas/oauth2/accessToken"
     
-    public init(linkedInConfig: LinkedInConfig) {
+    @objc public init(linkedInConfig: LinkedInConfig) {
         self.linkedInConfig = linkedInConfig
     }
     
-    public func login(from viewController: UIViewController, loadingTitleString: String? = nil,  loadingTitleFont: UIFont? = nil, navigationColor: UIColor = UIColor(red: 0, green: 119.0 / 255.0, blue: 181.0 / 255.0, alpha: 1.0), completion: @escaping (String) -> Void, failure: @escaping (Error) -> Void, cancel: @escaping () -> Void) {
+    @objc public func login(from viewController: UIViewController, loadingTitleString: String? = nil,  loadingTitleFont: UIFont? = nil, navigationColor: UIColor = UIColor(red: 0, green: 119.0 / 255.0, blue: 181.0 / 255.0, alpha: 1.0), completion: @escaping (String) -> Void, failure: @escaping (Error) -> Void, cancel: @escaping () -> Void) {
         self.completion = completion
         self.failure = failure
         self.cancel = cancel
