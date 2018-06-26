@@ -1,19 +1,23 @@
 PODS:
-  - LinkedInSignIn (0.1.0):
+  - LinkedInSignIn (0.1.1):
     - MBProgressHUD (~> 0.9)
   - MBProgressHUD (0.9.2)
 
 DEPENDENCIES:
   - LinkedInSignIn (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MBProgressHUD
+
 EXTERNAL SOURCES:
   LinkedInSignIn:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  LinkedInSignIn: 7b557e96a9d01a61d78f6def841404ed696add6a
+  LinkedInSignIn: 4f37f9062596011831f4ef0900f814869cc319f8
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
 
 PODFILE CHECKSUM: 179c4a86f033a1f2a758db2f26f0e16b575fa15d
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
