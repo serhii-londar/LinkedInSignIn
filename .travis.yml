@@ -3,10 +3,12 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: swift
-osx_image: xcode9.4
+osx_image: xcode10
 xcode_workspace: Example/LinkedInSignIn.xcworkspace
 xcode_scheme: LinkedInSignIn_Example
 before_install:
-  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  - gem install cocoapods
   - cd Example
   - pod install
+script:
+  - xcodebuild -workspace LinkedInSignIn.xcworkspace -scheme LinkedInSignIn_Example -sdk iphonesimulator12.0 clean build | xcpretty
