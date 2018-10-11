@@ -8,13 +8,14 @@
 
 import UIKit
 import MBProgressHUD
+import WebKit
 
 enum LinkedInLoginError: Error {
     case error(String)
 }
 
 class LinkedInLoginVC: UIViewController {
-    @IBOutlet weak var webView: UIWebView!
+    var webView: WKWebView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     var linkedInConfig: LinkedInConfig! = nil
     
@@ -33,7 +34,7 @@ class LinkedInLoginVC: UIViewController {
         super.viewDidLoad()
         navigationBar.barTintColor = self.navigationColor
         self.view.backgroundColor = self.navigationColor
-        webView.delegate = self
+        self.addWebView()
         self.showHUD()
     }
     
@@ -66,35 +67,45 @@ class LinkedInLoginVC: UIViewController {
         
         let url = URL(string: authorizationURL)
         let request = URLRequest(url: url!)
-        webView.loadRequest(request)
+        webView.load(request)
     }
 }
 
-extension LinkedInLoginVC: UIWebViewDelegate {
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+extension LinkedInLoginVC: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.hideHUD()
     }
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        let url = request.url!
-        if url.absoluteString.contains(authorizationEndPoint) {
-            return true
-        }
-        if url.absoluteString.contains(linkedInConfig.redirectURL) && url.absoluteString.contains("code") {
-            let urlParts = url.absoluteString.components(separatedBy: "?")
-            let code = urlParts[1].components(separatedBy: "=")[1]
-            completion(code)
-            return false
-        }
-        if url.absoluteString.contains("error=access_denied") {
-            failureString("Access Denied")
-            return false
-        }
-        return true
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        self.failureError(error)
     }
     
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-//        self.failureError(error)
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if let url = navigationAction.request.url {
+            if url.absoluteString.contains(authorizationEndPoint) {
+                decisionHandler(.allow)
+                return
+            }
+            if url.absoluteString.contains(linkedInConfig.redirectURL) && url.absoluteString.contains("code") {
+                let urlParts = url.absoluteString.components(separatedBy: "?")
+                let code = urlParts[1].components(separatedBy: "=")[1]
+                completion(code)
+                decisionHandler(.cancel)
+                return
+            }
+            if url.absoluteString.contains("error=access_denied") {
+                failureString("Access Denied")
+                decisionHandler(.cancel)
+                return
+            } else if url.absoluteString.contains("login-cancel?") {
+                failureString("Login Cencel")
+                decisionHandler(.cancel)
+                return
+            }
+            decisionHandler(.allow)
+            return
+        }
+        decisionHandler(.allow)
     }
 }
 
@@ -130,7 +141,7 @@ extension LinkedInLoginVC {
                 progressHUD?.labelFont = labelFont
             }
             progressHUD?.color = UIColor(red: 0.0/255.0, green: 119.0/255.0, blue: 181.0/255.0, alpha: 1.0)
-            progressHUD?.bringSubview(toFront: self.view)
+            progressHUD?.bringSubviewToFront(self.view)
         }
     }
     
@@ -138,5 +149,18 @@ extension LinkedInLoginVC {
         DispatchQueue.main.async {
             MBProgressHUD.hide(for: self.view, animated: true)
         }
+    }
+}
+
+extension LinkedInLoginVC {
+    func addWebView() {
+        webView = WKWebView(frame: CGRect.zero, configuration: WKWebViewConfiguration())
+        webView.navigationDelegate = self
+        self.view.addSubview(webView)
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: webView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: navigationBar, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.view, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: webView, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.view, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: webView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.view, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: webView, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1, constant: 0).isActive = true
     }
 }
