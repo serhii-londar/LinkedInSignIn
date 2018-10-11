@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LinkedInSignIn'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = '  Small swift library which help easy get access token from linkedin.com.'
 
 # This description is used to generate tags and improve search results.
@@ -36,6 +36,6 @@ Pod::Spec.new do |s|
   s.resource = 'LinkedInSignIn/**/*.storyboard'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit', 'MapKit', 'WebKit'
   s.dependency 'MBProgressHUD', '~> 0.9'
 end
