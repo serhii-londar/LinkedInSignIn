@@ -15,8 +15,10 @@ let linkedinCredentilas = [
     "redirectURL": ""
 ]
 
+let linkedInConfig = LinkedInConfig(linkedInKey: linkedinCredentilas["linkedInKey"]!, linkedInSecret: linkedinCredentilas["linkedInSecret"]!, redirectURL: linkedinCredentilas["redirectURL"]!)
 
 class ViewController: UIViewController {
+    let linkedInHelper = LinkedinHelper(linkedInConfig: linkedInConfig)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +31,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: AnyObject) {
-        let linkedInConfig = LinkedInConfig(linkedInKey: linkedinCredentilas["linkedInKey"]!, linkedInSecret: linkedinCredentilas["linkedInSecret"]!, redirectURL: linkedinCredentilas["redirectURL"]!)
-        let linkedInHelper = LinkedinHelper(linkedInConfig: linkedInConfig)
         linkedInHelper.login(from: self, loadingTitleString: "Loading", completion: { (token) in
             let alertVC = UIAlertController(title: "Success", message: "Your access token is : \(token)!", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
@@ -42,6 +42,10 @@ class ViewController: UIViewController {
         }) {
             print("Cancel")
         }
+    }
+    
+    @IBAction func logOut(_ sender: AnyObject) {
+        linkedInHelper.logOut()
     }
 }
 

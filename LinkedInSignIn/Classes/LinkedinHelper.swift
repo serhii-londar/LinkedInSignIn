@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import WebKit
 
 enum LinkedinHelperError: Error {
     case error(String)
@@ -51,6 +52,15 @@ enum LinkedinHelperError: Error {
             }
         }
         viewController.present(linkedInLoginVC, animated: true, completion: nil)
+    }
+    
+    public func logOut(_ completion: (() -> Void)? = nil) {
+        let dataTypes = Set([WKWebsiteDataTypeCookies])
+        WKWebsiteDataStore.default().removeData(ofTypes: dataTypes, modifiedSince: NSDate.distantPast, completionHandler: completion ?? {})
+    }
+    
+    @objc func logOut() {
+        self.logOut(nil)
     }
 }
 
