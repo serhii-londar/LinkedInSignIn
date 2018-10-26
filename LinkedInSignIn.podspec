@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LinkedInSignIn'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = '  Small swift library which help easy get access token from linkedin.com.'
 
 # This description is used to generate tags and improve search results.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   Simple view controller writed on pure Swift to login and retrieve access token from linkedin.com
                        DESC
 
-  s.pod_target_xcconfig = { "SWIFT_VERSION" => "4.0" }
+  s.pod_target_xcconfig = { "SWIFT_VERSION" => "4.2" }
   s.homepage         = 'https://github.com/serhii-londar/LinkedInSignIn'
   s.screenshots     = 'https://i.imgur.com/R8haoKu.png', 'https://i.imgur.com/QzjcjDR.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -36,6 +36,6 @@ Pod::Spec.new do |s|
   s.resource = 'LinkedInSignIn/**/*.storyboard'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'MapKit', 'WebKit'
+  s.frameworks = 'UIKit', 'WebKit'
   s.dependency 'MBProgressHUD', '~> 0.9'
 end
