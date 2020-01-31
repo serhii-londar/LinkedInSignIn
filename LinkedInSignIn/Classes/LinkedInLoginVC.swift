@@ -24,6 +24,8 @@ class LinkedInLoginVC: UIViewController {
     
     var navigationColor: UIColor? = nil
     
+    var isCompleted : Bool = false
+    
     var completion: ((String) -> Void)? = nil
     var failure: ((Error) -> Void)? = nil
     var cancel: (() -> Void)? = nil
@@ -36,6 +38,16 @@ class LinkedInLoginVC: UIViewController {
         self.view.backgroundColor = self.navigationColor
         self.addWebView()
         self.showHUD()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if !isCompleted {
+            if let cancel = cancel{
+                cancel()
+            }
+        }
+        
     }
     
     @IBAction func dismiss(sender: AnyObject) {
@@ -89,16 +101,19 @@ extension LinkedInLoginVC: WKNavigationDelegate {
             if url.absoluteString.contains(linkedInConfig.redirectURL) && url.absoluteString.contains("code") {
                 let urlParts = url.absoluteString.components(separatedBy: "?")
                 let code = urlParts[1].components(separatedBy: "=")[1]
+                isCompleted = true
                 completion(code)
                 decisionHandler(.cancel)
                 return
             }
             if url.absoluteString.contains("error=access_denied") {
                 failureString("Access Denied")
+                isCompleted = false
                 decisionHandler(.cancel)
                 return
             } else if url.absoluteString.contains("login-cancel?") {
-                failureString("Login Cencel")
+                failureString("Login Cancel")
+                isCompleted = false
                 decisionHandler(.cancel)
                 return
             }
