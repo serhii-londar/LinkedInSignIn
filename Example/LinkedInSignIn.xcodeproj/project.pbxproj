@@ -234,6 +234,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -275,7 +276,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LinkedInSignIn_Example/Pods-LinkedInSignIn_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LinkedInSignIn_Example/Pods-LinkedInSignIn_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LinkedInSignIn/LinkedInSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 			);
@@ -286,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LinkedInSignIn_Example/Pods-LinkedInSignIn_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LinkedInSignIn_Example/Pods-LinkedInSignIn_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3930C77E64027E92E965326 /* [CP] Check Pods Manifest.lock */ = {
@@ -498,7 +499,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "LinkedInSignIn/LinkedInSignIn_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -518,7 +519,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "LinkedInSignIn/LinkedInSignIn_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
